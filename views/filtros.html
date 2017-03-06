@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body ng-init="customers=[{name:'Nombre', city:'Ciudad3'}, {name:'Nombre1', city:'Ciudad2'},
+        {name:'Nombre2', city:'Ciudad1'}, {name:'Nombre3', city:'Ciudad'}]">
+<div class="container">
+    Name :
+    <br>
+    <input type="text" ng-model="name">
+    <br>
+    <ul>
+        <li ng-repeat="c in customers | filter:name | orderBy:'city'">{{c.name | uppercase}} - {{c.city | lowercase}}</li>
+    </ul>
+</div>
+<script src="./../javascripts/angular/angular.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="demoApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body ng-controller="SimpleController">
+<div class="container">
+    Name :
+    <br>
+    <input type="text" ng-model="name">
+    <br>
+    <ul>
+        <li ng-repeat="c in customers | filter:name | orderBy:'city'">{{c.name | uppercase}} - {{c.city | lowercase}}</li>
+    </ul>
+</div>
+<script src="./../javascripts/angular/angular.min.js"></script>
+<script src="./../javascripts/angular/controllers.js"></script>
+</body>
+</html>
